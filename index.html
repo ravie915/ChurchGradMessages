@@ -29,7 +29,7 @@
     align-items: center;
     justify-content: center;
     font-family: var(--font-body);
-    background: linear-gradient(180deg, #2b3a67 0%, #4a3f7a 45%, #7a4a6b 100%);
+    background: linear-gradient(180deg, #46538c 0%, #6c5b95 45%, #a8768a 100%);
     padding: 20px;
     position: relative;
   }
@@ -47,9 +47,9 @@
 
   .balloon {
     position: absolute;
-    bottom: -160px;
-    width: 50px;
-    height: 62px;
+    bottom: -220px;
+    width: 90px;
+    height: 112px;
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
     animation-name: floatUp;
     animation-timing-function: linear;
@@ -59,21 +59,21 @@
   .balloon::before {
     content: '';
     position: absolute;
-    top: 8px;
-    left: 12px;
-    width: 12px;
-    height: 16px;
-    background: rgba(255,255,255,0.35);
+    top: 14px;
+    left: 20px;
+    width: 20px;
+    height: 26px;
+    background: rgba(255,255,255,0.4);
     border-radius: 50%;
   }
 
   .balloon::after {
     content: '';
     position: absolute;
-    bottom: -46px;
+    bottom: -60px;
     left: 50%;
     width: 1px;
-    height: 46px;
+    height: 60px;
     background: rgba(255,255,255,0.4);
   }
 
@@ -312,21 +312,21 @@ loadMessage();
 /* ---------- Floating balloons rising from the bottom ---------- */
 (function balloons() {
   const container = document.getElementById('balloons');
-  const colors = ['#d4af37', '#ff6b6b', '#4ecdc4', '#a78bfa', '#f472b6', '#60a5fa', '#fbbf24'];
-  const count = 12;
+  const goldShades = ['#d4af37', '#f4d160', '#e8c547', '#c9a227', '#ffd700', '#e6be5a'];
+  const count = 10;
 
   for (let i = 0; i < count; i++) {
     const b = document.createElement('div');
     b.className = 'balloon';
-    const size = 40 + Math.random() * 26;
-    const color = colors[Math.floor(Math.random() * colors.length)];
-    const duration = 14 + Math.random() * 10;
+    const size = 80 + Math.random() * 50;
+    const color = goldShades[Math.floor(Math.random() * goldShades.length)];
+    const duration = 16 + Math.random() * 10;
     const delay = -Math.random() * duration;
 
-    b.style.left = (Math.random() * 92) + '%';
+    b.style.left = (Math.random() * 88) + '%';
     b.style.width = size + 'px';
     b.style.height = (size * 1.25) + 'px';
-    b.style.background = `radial-gradient(circle at 30% 25%, ${color}, ${color} 60%, rgba(0,0,0,0.15))`;
+    b.style.background = `radial-gradient(circle at 30% 25%, ${color}, ${color} 60%, rgba(120,90,10,0.4))`;
     b.style.animationDuration = duration + 's';
     b.style.animationDelay = delay + 's';
 
