@@ -29,7 +29,7 @@
     align-items: center;
     justify-content: center;
     font-family: var(--font-body);
-    background: linear-gradient(180deg, #46538c 0%, #6c5b95 100%);
+    background: linear-gradient(180deg, #0d1b3e 0%, #16264d 55%, #1f3059 100%);
     padding: 20px;
     position: relative;
   }
@@ -54,6 +54,7 @@
     animation-name: floatUp;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    filter: drop-shadow(0 0 14px rgba(255, 215, 0, 0.55));
   }
 
   .balloon::before {
@@ -312,21 +313,20 @@ loadMessage();
 /* ---------- Floating balloons rising from the bottom ---------- */
 (function balloons() {
   const container = document.getElementById('balloons');
-  const goldShades = ['#d4af37', '#f4d160', '#e8c547', '#c9a227', '#ffd700', '#e6be5a'];
-  const count = 18;
+  const gold = '#e8c14a';
+  const count = 7;
 
   for (let i = 0; i < count; i++) {
     const b = document.createElement('div');
     b.className = 'balloon';
-    const size = 80 + Math.random() * 50;
-    const color = goldShades[Math.floor(Math.random() * goldShades.length)];
+    const size = 46 + Math.random() * 20;
     const duration = 16 + Math.random() * 10;
     const delay = -Math.random() * duration;
 
     b.style.left = (Math.random() * 88) + '%';
     b.style.width = size + 'px';
     b.style.height = (size * 1.25) + 'px';
-    b.style.background = `radial-gradient(circle at 30% 25%, ${color}, ${color} 60%, rgba(120,90,10,0.4))`;
+    b.style.background = `radial-gradient(circle at 30% 25%, #ffe27a, ${gold} 60%, #b8912a 100%)`;
     b.style.animationDuration = duration + 's';
     b.style.animationDelay = delay + 's';
 
