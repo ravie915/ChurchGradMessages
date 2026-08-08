@@ -482,6 +482,12 @@ async function loadMessage() {
       content.setAttribute('dir', 'rtl');
     }
 
+    // Personalize the envelope's "from" line if this person has a specific one set
+    if (person.from) {
+      const envelopeFrom = document.querySelector('.envelope-from');
+      if (envelopeFrom) envelopeFrom.textContent = 'من ' + person.from;
+    }
+
     const photoHtml = person.photo
       ? `<img class="photo" src="${person.photo}" alt="${person.name}">`
       : '';
